@@ -1,0 +1,67 @@
+:root{
+    --dark-jungle-green: hsl(188, 63%, 7%);
+    --prussian-blue: hsl(200, 69%, 14%);
+    --raisin-black-1: hsl(227, 29%, 13%);
+    --raisin-black-2: hsl(229, 17%, 19%);
+    --yellow-green: hsl(89, 72%, 45%);
+    --orange-soda: hsl(9, 100%, 62%);
+    --cultured-1: hsl(0, 0%, 93%);
+    --cultured-2: hsl(192, 24%, 96%);
+    --misty-rose: hsl(7, 56%, 91%);
+    --alice-blue: hsl(210, 100%, 97%);
+    --seashell: hsl(8, 100%, 97%);
+    --cadet: hsl(200, 15%, 43%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --opal: hsl(180, 20%, 62%);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 60% !important;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.container ul li{
+    list-style: none;
+    background: var(--cultured-1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container ul li:hover{
+   background: var(--dark-jungle-green);
+   color: var(--white);
+}
+
+.container a{
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 10px;
+    color: var(--black);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: var(--orange-soda);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.task-list .complete-task{
+    color: green;
+    font-weight: 600;
+}
+
+/* -----------------responsive css------------------------------ */
+@media(max-width: 800px){
+    .container{
+        width: 90% !important;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends 'todo_app/base.html' %}
+
+
+{% block content %}
+    <div class="container form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="{% url 'todo-list' %}" class="btn btn-success">Go Back</a>
+        </form>
+    </div>
+   
+{% endblock %}

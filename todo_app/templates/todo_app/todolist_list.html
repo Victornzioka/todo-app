@@ -1,0 +1,42 @@
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <div>
+                <h3>Todo List</h3>
+                <h6>Welcome, {{request.user}}</h6>
+            </div>
+            <div>
+                <a href="{% url 'add-task' %}" class="btn btn-success">Add Task</a>
+                <a href="{% url 'logout' %}" class="btn btn-primary">Log Out</a>
+            </div>
+            
+        </div>
+        
+        <div class="task-list">
+            <ul>
+                {% if request.user.is_authenticated %}
+                    {% for task in tasks %}
+                        {% if task.complete %}
+                            <i><s><a href="{% url 'todo-detail' task.id %}" class="complete-task"><li>{{task.task}}</li></a></s></i>
+                        {% endif %}
+                    
+                        {% if not task.complete %}
+                            <a href="{% url 'todo-detail' task.id %}"><li>{{task.task}}</li></a>
+                        {% endif %}
+                    {% empty %}
+                        <li>There are no tasks yet</li>
+                    {% endfor %}
+                {% else %}
+                    <p id="">
+                        Greetings. Please Log in to your account <br>
+                        <a href="{% url 'login' %}" class="btn btn-success">Log In</a>
+                    </p>
+
+                {% endif %}
+            </ul>
+        </div>
+        
+    </div>
+{% endblock content %}
